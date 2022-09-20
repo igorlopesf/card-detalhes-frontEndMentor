@@ -25,17 +25,19 @@
     justify-content: center;
     align-items: center;
     width: 30%;
-    min-width: 375px;
+    /* min-width: 375px; */
     height: 100vh;
     background: url("./img/bg-main-desktop.png") no-repeat;
     background-size: cover;
 }
 
-/* @media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 910px) {
     .sectionCards {
-        height: auto;
+        width: 100%;
+        height: 160px;
+        flex-wrap: nowrap;
     }
-} */
+} 
 
 .card {
     display: flex;
@@ -45,9 +47,10 @@
     transition: all ease 0.5s;
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 910px) {
     .card {
-        width: 375px;
+        width: 250px;
+        height: 170px;
     }
 }
 
@@ -63,11 +66,21 @@
     left: 150px;
 }
 
-@media only screen and (max-width: 1250px) {
+ @media only screen and (max-width: 1250px) {
     .Frente {
         left: 30px;
     }
-}
+}  
+ @media only screen and (max-width: 910px) {
+    .Frente {
+        margin-top: 210px;
+        left: 20px;
+        position: relative;
+        z-index: 1;
+        height: 170px;
+        padding: 20px;
+    }
+}  
 
 .circulos{
     display: flex; 
@@ -98,10 +111,23 @@
     letter-spacing: 3px; 
 }
 
+@media only screen and (max-width: 500px) {
+    .numeroCard .numero{
+        font-size: 22px;
+        letter-spacing: 0px; 
+    }
+}
 .infos{
     display: flex;
     justify-content: space-between;
 }
+
+@media only screen and (max-width: 500px) {
+    .infos{
+        font-size: 12px;   
+    }
+}
+
 
 .verso{
     background: url("./img/bg-card-back.png") no-repeat;
@@ -125,6 +151,15 @@
         left: 30px;
     }
 }
+@media only screen and (max-width: 910px) {
+    .verso {
+        left: -20px;
+        position: relative;
+        top: -65px;
+        margin-top: 0px;
+        min-height: 150px;
+    }
+}
 
 .codigo{
     margin-right: 40px; 
@@ -144,6 +179,12 @@
 @media only screen and (max-width: 1250px) {
     .sectionForm {
         width: 350px;
+    }
+}
+@media only screen and (max-width: 910px) {
+    .sectionForm {
+        height: auto;
+        margin-top: 150px;
     }
 }
 
