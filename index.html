@@ -46,7 +46,7 @@
           
             <div class="inputs ">
                 <label>NÚMERO DO CARTÃO</label>
-                <input type="text" class="numeroForm" placeholder="0000 0000 0000 0000" />
+                <input type="text" class="numeroForm" placeholder="0000 0000 0000 0000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
             </div>
 
             <div class="dataCv">
@@ -56,11 +56,11 @@
                 </div>
                 <div class="inputs cv">
                     <label for="">CVC</label>
-                    <input type="text" name="cvc" id="cvc" placeholder="000"/>
+                    <input type="text" name="cvc" id="cvc" placeholder="000" maxlength="3"/>
                 </div>
             </div>
             
-            <button>Confirmar</button>
+            <button id="btn">Confirmar</button>
         </div>
       </section>
     </main>
