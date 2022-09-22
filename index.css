@@ -4,6 +4,7 @@
     --violetaClaro:  hsl(270, 3%, 87%);
     --violeta:  hsl(279, 6%, 55%);
     --violetaDark: hsl(278, 68%, 11%);
+    --redErro: hsl(0, 100%, 66%);
 }
 *{
     margin: 0px;
@@ -209,13 +210,13 @@
     height: 35px;
 }
 
-.containerForm input:hover{
+/* .containerForm input:hover + {
     outline: 2px solid var(--violetaDark);
-} 
+}  */
 
 .containerForm input:focus{
     outline: 2px solid var(--violetaDark);     
-}
+} 
 
 .inputs{
     display: flex;
@@ -240,3 +241,12 @@
     background: linear-gradient(90deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 100%);
 }
 
+.erro{
+    display: none;
+    font-size: 12px;
+    color: var(--redErro);
+}
+
+#numeroForm{
+    border: none;
+}

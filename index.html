@@ -42,11 +42,13 @@
             <div class="inputs">
                 <label>NOME DO TITULAR</label>
                 <input type="text" name="nome" id="nomeForm" placeholder="Igor Lopes da S. Feitosa" />
+                <label for="" class="erro" id="nomeErro">Nome inválido!</label>
             </div>
           
             <div class="inputs ">
                 <label>NÚMERO DO CARTÃO</label>
-                <input type="text" class="numeroForm" placeholder="0000 0000 0000 0000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+                <input type="text" class="numeroForm" id="nomeForm" placeholder="0000 0000 0000 0000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+                <label for="" class="erro" id="numeroErro">Número do cartão inválido!</label>
             </div>
 
             <div class="dataCv">
