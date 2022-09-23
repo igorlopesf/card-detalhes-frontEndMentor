@@ -47,7 +47,8 @@
           
             <div class="inputs ">
                 <label>NÚMERO DO CARTÃO</label>
-                <input type="text" class="numeroForm" id="nomeForm" placeholder="0000 0000 0000 0000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+                <!-- <input type="text" name="numero" class="numeroForm" id="nomeForm" placeholder="0000 0000 0000 0000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" /> -->
+                <input type="text" name="numero" id="numeroForm" placeholder="0000 0000 0000 0000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                 <label for="" class="erro" id="numeroErro">Número do cartão inválido!</label>
             </div>
 
@@ -55,10 +56,12 @@
                 <div class="inputs">
                     <label for="">EXP. DATA</label>
                     <input type="month" name="dt" id="dt" />
+                    <label for="" class="erro" id="dataErro">Data inválida!</label>
                 </div>
                 <div class="inputs cv">
                     <label for="">CVC</label>
                     <input type="text" name="cvc" id="cvc" placeholder="000" maxlength="3"/>
+                    <label for="" class="erro" id="cvcErro">Código inválido!</label>
                 </div>
             </div>
             
