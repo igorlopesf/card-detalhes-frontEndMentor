@@ -7,7 +7,7 @@ const resultCvc = document.querySelector(".codigo");
 const dataa = document.querySelector("#dt");
 const resultDt = document.querySelector(".data");
 const botao = document.querySelector("#btn");
-const mascara = ["SEU NOME", "0000 0000 0000 0000", "AAA"];
+const mascara = ["SEU NOME", "0000 0000 0000 0000", "000"];
 
 nome.addEventListener("input", function () {
     resultNome.textContent = this.value.toUpperCase();
