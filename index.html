@@ -7,6 +7,7 @@
     <title>Cartão</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
+
   <body>
     <main class="container">
       <section class="sectionCards">
@@ -26,7 +27,8 @@
             </div>
 
             <div class="dataCard">
-              <label class="data">00/00</label>
+              <label class="placeMes">00</label><label for="">/</label
+              ><label for="" class="placeAno">00</label>
             </div>
           </div>
         </div>
@@ -37,35 +39,72 @@
       </section>
 
       <section class="sectionForm">
-
         <div class="containerForm">
-            <div class="inputs">
-                <label>NOME DO TITULAR</label>
-                <input type="text" name="nome" id="nomeForm" placeholder="Igor Lopes da S. Feitosa" />
-                <label for="" class="erro" id="nomeErro">Nome inválido!</label>
-            </div>
-          
-            <div class="inputs ">
-                <label>NÚMERO DO CARTÃO</label>
-                <!-- <input type="text" name="numero" class="numeroForm" id="nomeForm" placeholder="0000 0000 0000 0000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" /> -->
-                <input type="text" name="numero" id="numeroForm" placeholder="0000 0000 0000 0000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
-                <label for="" class="erro" id="numeroErro">Número do cartão inválido!</label>
-            </div>
+          <div class="inputs">
+            <label>NOME DO TITULAR</label>
+            <input
+              type="text"
+              name="nome"
+              id="nomeForm"
+              placeholder="Igor Lopes da S. Feitosa"
+            />
+            <label for="" class="erro" id="nomeErro">Nome inválido!</label>
+          </div>
 
-            <div class="dataCv">
-                <div class="inputs">
-                    <label for="">EXP. DATA</label>
-                    <input type="month" name="dt" id="dt" />
-                    <label for="" class="erro" id="dataErro">Data inválida!</label>
-                </div>
-                <div class="inputs cv">
-                    <label for="">CVC</label>
-                    <input type="text" name="cvc" id="cvc" placeholder="000" maxlength="3"/>
-                    <label for="" class="erro" id="cvcErro">Código inválido!</label>
-                </div>
+          <div class="inputs">
+            <label>NÚMERO DO CARTÃO</label>
+            <!-- <input type="text" name="numero" class="numeroForm" id="nomeForm" placeholder="0000 0000 0000 0000" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" /> -->
+            <input
+              type="text"
+              name="numero"
+              id="numeroForm"
+              placeholder="0000 0000 0000 0000"
+              maxlength="16"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+            />
+            <label for="" class="erro" id="numeroErro"
+              >Número do cartão inválido!</label
+            >
+          </div>
+
+          <div class="dataCv">
+            <div class="inputs">
+              <label for="">EXP. DATA</label>
+              <div class="mesAnoInput">
+                <input
+                  type="text"
+                  name=""
+                  id="mesInput"
+                  placeholder="MM"
+                  maxlength="2"
+                  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                />
+                <input
+                  type="text"
+                  name=""
+                  id="anoInput"
+                  placeholder="AAAA"
+                  maxlength="4"
+                  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                />
+              </div>
+              <label for="" class="erro" id="dataErro">Data inválida!</label>
             </div>
-            
-            <button id="btn">Confirmar</button>
+            <div class="inputs cv">
+              <label for="">CVC</label>
+              <input
+                type="text"
+                name="cvc"
+                id="cvc"
+                placeholder="000"
+                maxlength="3"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+              />
+              <label for="" class="erro" id="cvcErro">Código inválido!</label>
+            </div>
+          </div>
+
+          <button id="btn">Confirmar</button>
         </div>
       </section>
     </main>

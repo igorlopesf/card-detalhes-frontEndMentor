@@ -4,14 +4,16 @@ const numero = document.querySelector("#numeroForm");
 const resultNumero = document.querySelector(".numero");
 const cvc = document.querySelector("#cvc");
 const resultCvc = document.querySelector(".codigo");
-const dataa = document.querySelector("#dt");
-const resultDt = document.querySelector(".data");
+const mes = document.querySelector("#mesInput");
+const resultMes = document.querySelector(".placeMes");
+const ano = document.querySelector("#anoInput");
+const resultAno = document.querySelector(".placeAno");
 const botao = document.querySelector("#btn");
-const mascara = ["SEU NOME", "0000 0000 0000 0000", "AAA"];
+const mascara = ["SEU NOME", "0000 0000 0000 0000", "AAA", "00"];
+const dataAtual = new Date();
 
 nome.addEventListener("input", function () {
   resultNome.textContent = this.value.toUpperCase();
-
   replaceHolder(nome, resultNome, 0);
   validaNome(nome);
 });
@@ -30,15 +32,24 @@ cvc.addEventListener("input", function () {
   validaCvc(cvc);
 });
 
-dataa.addEventListener("input", function () {
-  resultDt.textContent = this.value;
+mes.addEventListener("input", function () {
+  resultMes.textContent = this.value;
+  replaceHolder(mes, resultMes, 3);
+  validaMes(mes);
+});
+
+ano.addEventListener("input", function () {
+  resultAno.textContent = this.value;
+  replaceHolder(ano, resultAno, 3);
+  validaAno(ano);
 });
 
 botao.addEventListener("click", function () {
   validaNumero(numero);
   validaNome(nome);
   validaCvc(cvc);
-  retornaData(dataa);
+  validaMes(mes);
+  validaAno(ano);
 });
 
 function replaceHolder(info, result, indexMascara) {
@@ -86,47 +97,32 @@ function validaCvc(codigo) {
   }
 }
 
-function retornaData(dt) {
-    const erro = document.getElementById("dataErro");
-    const borderErro = document.getElementById("dt");
-  
-    const dataAtual = new Date();
-    var mesAtual = dataAtual.getMonth()+1;
-    var anoAtual = dataAtual.getFullYear();
+function validaMes(ms) {
+  const erro = document.getElementById("dataErro");
+  const borderErroMes = document.getElementById("mesInput");
+  var mesAtual = dataAtual.getMonth() + 1;
+  mesInt = parseInt(ms.value);
 
-    var dataInput = dt.value;
-    var mesAnoInput = dataInput.split("-");
-    var mesInput = parseInt(mesAnoInput[1]);
-    var anoInput = parseInt(mesAnoInput[0]);
-
-  var teste1 = mesInput+anoInput;
-  var teste2 = mesAtual+anoAtual;
-  /* console.log(dataAtual+"data atual");
-  console.log(mesAtual+"mes atual");
-  console.log(anoAtual+"ano atual");
-
- 
-  console.log(mesInput);
-  console.log(anoInput);  */
-
- /*  if (anoInput >= anoAtual) {
-    console.log("ano maior ou igual");
-    if (mesInput >= mesAtual) {
-        erro.style.display = "none";
-        borderErro.style.border = "none";
-    }
-  } 
-
-  erro.style.display = "block";
-  borderErro.style.border = "2px solid var(--redErro)" */;
-
-  
-
-   if(teste1 >=teste2){
-    console.log("top")
-   }else{
-    console.log("error");
-   }
-  
+  if (mesInt < mesAtual || mesInt > 12) {
+    erro.style.display = "block";
+    borderErroMes.style.border = "2px solid var(--redErro)";
+  } else {
+    erro.style.display = "none";
+    borderErroMes.style.border = "1px solid var(--violetaClaro)";
+  }
 }
 
+function validaAno(an) {
+  const erro = document.getElementById("dataErro");
+  const borderErroAno = document.getElementById("anoInput");
+  var anoAtual = dataAtual.getFullYear();
+  anoInt = parseInt(an.value);
+
+  if (anoInt < anoAtual) {
+    erro.style.display = "block";
+    borderErroAno.style.border = "2px solid var(--redErro)";
+  } else {
+    erro.style.display = "none";
+    borderErroAno.style.border = "1px solid var(--violetaClaro)";
+  }
+}

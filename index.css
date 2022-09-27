@@ -223,6 +223,16 @@
     flex-direction: column;
 }
 
+
+#mesInput{
+    width: 60px;
+}
+
+#anoInput{
+    width: 60px;
+    margin-left: 5px;
+}
+
 .cv{
     margin-left: 15px;
 }
