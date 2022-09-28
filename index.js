@@ -10,7 +10,10 @@ const ano = document.querySelector("#anoInput");
 const resultAno = document.querySelector(".placeAno");
 const botao = document.querySelector("#btn");
 const mascara = ["SEU NOME", "0000 0000 0000 0000", "AAA", "00"];
+const containerForm = document.querySelector(".containerForm");
+const complete = document.querySelector(".complete");
 const dataAtual = new Date();
+var checkout = 0;
 
 nome.addEventListener("input", function () {
   resultNome.textContent = this.value.toUpperCase();
@@ -45,11 +48,18 @@ ano.addEventListener("input", function () {
 });
 
 botao.addEventListener("click", function () {
-  validaNumero(numero);
   validaNome(nome);
-  validaCvc(cvc);
+  validaNumero(numero);
   validaMes(mes);
   validaAno(ano);
+  validaCvc(cvc);
+  
+  console.log(checkout, "final");
+
+  if(checkout == 5 ){
+    containerForm.style.display= "none";
+    complete.style.display="flex";
+  }
 });
 
 function replaceHolder(info, result, indexMascara) {
@@ -68,6 +78,7 @@ function validaNome(nm) {
   } else {
     erro.style.display = "none";
     borderErro.style.border = "none";
+    checkout=1;
   }
 }
 
@@ -81,6 +92,7 @@ function validaNumero(nro) {
   } else {
     erro.style.display = "none";
     borderErroNro.style.border = "none";
+    checkout++;
   }
 }
 
@@ -94,6 +106,7 @@ function validaCvc(codigo) {
   } else {
     erro.style.display = "none";
     borderErro.style.border = "none";
+    checkout++;
   }
 }
 
@@ -109,6 +122,7 @@ function validaMes(ms) {
   } else {
     erro.style.display = "none";
     borderErroMes.style.border = "1px solid var(--violetaClaro)";
+    checkout++;
   }
 }
 
@@ -124,5 +138,6 @@ function validaAno(an) {
   } else {
     erro.style.display = "none";
     borderErroAno.style.border = "1px solid var(--violetaClaro)";
+    checkout++;
   }
 }

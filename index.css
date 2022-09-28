@@ -225,11 +225,11 @@
 
 
 #mesInput{
-    width: 60px;
+    width: 65px;
 }
 
 #anoInput{
-    width: 60px;
+    width: 65px;
     margin-left: 5px;
 }
 
@@ -237,7 +237,7 @@
     margin-left: 15px;
 }
 
-.containerForm button{
+.botao{
     border-style: none;
     border-radius: 10px;
     height: 45px;
@@ -246,7 +246,7 @@
     font-weight: bold;
 }
 
-.containerForm button:hover{
+.botao:hover{
     background: rgb(100,72,254);
     background: linear-gradient(90deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 100%);
 }
@@ -257,3 +257,25 @@
     color: var(--redErro);
 }
 
+.complete{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 280px;
+}
+
+.complete label{
+    font-size: 30px;
+    color: var(--violetaDark);
+}
+
+.complete p{
+    font-size: 15px;
+    text-align: center;
+    color: var(--violeta);
+}
+
+.complete button{
+    width: 330px
+}
