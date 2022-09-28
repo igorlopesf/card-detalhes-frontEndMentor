@@ -53,12 +53,12 @@ botao.addEventListener("click", function () {
   validaMes(mes);
   validaAno(ano);
   validaCvc(cvc);
-  
+
   console.log(checkout, "final");
 
-  if(checkout == 5 ){
-    containerForm.style.display= "none";
-    complete.style.display="flex";
+  if (checkout == 5) {
+    containerForm.style.display = "none";
+    complete.style.display = "flex";
   }
 });
 
@@ -78,7 +78,7 @@ function validaNome(nm) {
   } else {
     erro.style.display = "none";
     borderErro.style.border = "none";
-    checkout=1;
+    checkout = 1;
   }
 }
 
@@ -116,7 +116,7 @@ function validaMes(ms) {
   var mesAtual = dataAtual.getMonth() + 1;
   mesInt = parseInt(ms.value);
 
-  if (mesInt < mesAtual || mesInt > 12) {
+  if (mesInt < mesAtual || mesInt > 12 || ms.value.length < 2) {
     erro.style.display = "block";
     borderErroMes.style.border = "2px solid var(--redErro)";
   } else {
@@ -132,7 +132,7 @@ function validaAno(an) {
   var anoAtual = dataAtual.getFullYear();
   anoInt = parseInt(an.value);
 
-  if (anoInt < anoAtual) {
+  if (anoInt < anoAtual || an.value.length < 4) {
     erro.style.display = "block";
     borderErroAno.style.border = "2px solid var(--redErro)";
   } else {
